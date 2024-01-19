@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage('Checkout') {
             steps {
-                git url:'https://github.com/theanh124302/first_jenkins.git'
+                // Bước này để checkout mã nguồn từ GitHub
+                checkout scm
             }
         }
     }
