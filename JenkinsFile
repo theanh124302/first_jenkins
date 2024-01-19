@@ -8,5 +8,11 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Test') {
+            steps {
+                // Bước này để checkout mã nguồn từ GitHub
+                echo 'oke'
+            }
+        }
     }
 }
