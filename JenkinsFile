@@ -8,12 +8,5 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Clone') {
-            steps {
-                // Bước này để checkout mã nguồn từ GitHub
-                git 'https://github.com/theanh124302/first_jenkins.git'
-            }
-        }
-
     }
 }
