@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('clone') {
+            steps {
+                git 'https://github.com/theanh124302/first_jenkins.git'
+            }
+        }
+    }
+}
