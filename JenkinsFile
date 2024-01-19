@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('clone') {
+        stage('Clone') {
             steps {
                 git url:'https://github.com/theanh124302/first_jenkins.git'
             }
