@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
+                withDockerRegistry(credentialsId: 'dockerhub', url: '') {
                     sh 'docker push hoangtheanh2002hhbg/testjenkins:v1'
                 }
             }
