@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo "TheAnh4938.124_302" | sudo -S docker login -u hoangtheanh2002hbg@gmail.com --password-stdin'
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
+                    sh 'docker push hoangtheanh2002hhbg/testjenkins:v1'
+                }
             }
         }
     }
