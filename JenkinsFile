@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
-                    sh 'sudo docker login -u hoangtheanh2002hbg@gmail.com -p TheAnh4938.124_302'
-                }
+                sh 'sudo docker login -u hoangtheanh2002hbg@gmail.com -p TheAnh4938.124_302'
             }
         }
     }
