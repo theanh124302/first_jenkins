@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'sudo docker login -u hoangtheanh2002hbg@gmail.com -p TheAnh4938.124_302'
+                sh 'echo "TheAnh4938.124_302" | sudo -S docker login -u hoangtheanh2002hbg@gmail.com --password-stdin'
             }
         }
     }
