@@ -1,10 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: '') {
-                    sh 'docker push hoangtheanh2002hhbg/testjenkins:v1'
+                script {
+                    dir(buildDir) {
+                        dockerImage = docker.build("hoangtheanh2002hhbg/testjen:v1","-f  .")
+                    }
+                }
+            }
+        }
+
+        stage('Publish') {
+            steps {
+                script {
+                    docker.withRegistry('', 'dockerhub') {
+                        dockerImage.push()
+                    }
                 }
             }
         }
